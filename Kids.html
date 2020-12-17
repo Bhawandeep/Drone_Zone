@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang=en>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #333;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#video-background 
+{
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+article 
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  margin: 10px;
+}
+
+
+
+h1 
+{
+  position: absolute;
+  top: 1%;
+  width: 100%;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+}
+
+h1 span {
+  font-family: sans-serif;
+  letter-spacing: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h2 {
+  position: absolute;
+  top: 500px;
+  width: 100%;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+}
+h3 {
+  position: absolute;
+  top: 250px;
+  width: 100%;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+}
+
+.center {  
+text-align: center; 
+margin-top:100px;
+border: 3px solid green;
+padding: 10px 20px;
+
+}
+
+h1 span a 
+{
+  color: #fff;
+}
+
+ul.a {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+  }
+  
+  ul.a li {
+    float: left;
+    width: 16.6666%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  ul.b li {
+    float: left;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  ul.a li a {
+   text-decoration: none;
+   color: white;
+   display: block;
+  }
+  
+  ul.a li a:hover {
+   background-color: #264800;
+  }
+  
+  ul.a li ul li {
+   display:none
+  }
+  
+  ul.a li:hover ul li {
+    display: block
+  }
+
+
+.centerpic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 150px
+    }
+
+footer{ 
+	padding: 0.5em;
+	color: white;  
+	font-size:16px;
+	text-align: center;
+	font-family: Oswald;
+	background-color:grey;
+    bottom: -800px;
+    position:absolute;
+    width: 100%;
+	} 
+	
+	#section-a{
+  padding:20px;
+  text-align:center;
+  
+  
+  
+  
+  
+  
+  
+}
+
+
+
+</style>
+
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+
+
+<h1><img src="https://preview.ibb.co/h1ozrn/Drone_Zone_White.png" alt="Drone_Zone_White" border="0">
+ 
+ 
+  <form class="example" action="https://www.google.com/search" method="get" style="margin:auto;max-width:200px">
+  <input type="search" placeholder="Search For More Info..." name="q">
+</form>
+ 
+ 
+	<ul class="a">
+		<li><a href="Home.html"> Home  </a></li>
+		<li><a href="Gallery.html"> Gallery </a></li>  
+		<li><a href="Order.html"> Order Now </a></li>
+		<li><a href="About.html"> About Us </a></li>
+		<li><a href="Kids.html"> Kids Page </a></li>
+		<li><a> Links </a>
+			<ul class="b">
+				<li><a href="https://www.intel.com/content/www/us/en/technology-innovation/aerial-technology-overview.html?cid=sem43700027471319741&intel_term=Drones&gclid=EAIaIQobChMI8Zfb4vC82gIV1luGCh0i7AeiEAAYASAAEgJx4_D_BwE&gclsrc=aw.ds&dclid=CJuR2e3wvNoCFYK4yAodrNsCeg"> Intel </a></a></li>
+				<li><a href="https://www.dronetechnology.eu/"> Drone Tech </a></li>
+				<li><a href="https://www.google.com/"> Google </a></li>
+			</ul>
+			
+		</li>
+	</ul>
+</h1>
+
+	
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+<h3>
+Drone Hangman!
+</h3>
+<br><br><br><br>
+<SCRIPT LANGUAGE="javascript">
+
+/*
+Script by Mike Mcgrath- http://website.lineone.net/~mike_mcgrath
+Featured on JavaScript Kit (http://javascriptkit.com)
+For this and over 400+ free scripts, visit http://javascriptkit.com
+*/
+
+var alpha=new Array();
+var alpha_index=0;
+
+var bravo=new Array();
+var bravo_index=0;
+
+var running=0;
+var failnum=0;
+var advising=0;
+
+function pick()
+{
+  var choice="";
+  var blank=0;
+ 
+  for (i=0; i<words[index].length; i++)
+  {
+    t=0;
+    for(j=0; j<=alpha_index; j++) 
+    if(words[index].charAt(i)==alpha[j] || words[index].charAt(i)==alpha[j].toLowerCase()) t=1;
+    
+    if (t) choice+=words[index].charAt(i)+" ";
+    else 
+    {
+      choice+="_ ";
+      blank=1;
+    }
+  }   
+    
+  document.f.word.value=choice;
+    
+  if (!blank)
+  {
+    document.f.tried.value="   === You Win! ===";
+    document.f.score.value++;
+    running=0;
+  }
+} 
+
+
+function new_word(form)
+{
+  if(!running)
+  {
+    running=1;
+    failnum=0;
+    form.lives.value=failnum;
+    form.tried.value="";
+    form.word.value="";
+    index=Math.round(Math.random()*10000) % 100;
+    alpha[0]=words[index].charAt(0);
+    alpha[1]=words[index].charAt(words[index].length-1);
+    alpha_index=1;
+    bravo[0]=words[index].charAt(0);
+    bravo[1]=words[index].charAt(words[index].length-1);
+    bravo_index=1;
+    pick();
+  }
+  else advise("A word is already in play!");
+}
+
+function seek(letter)
+{
+  if (!running) advise(".....Click GO to start !");
+  else
+  {
+    t=0;
+    for (i=0; i<=bravo_index; i++)
+    {
+      if (bravo[i]==letter || bravo[i]==letter.toLowerCase()) t=1;
+    }
+
+    if (!t) 
+	  {
+	    document.f.tried.value+=letter+" "
+	    bravo_index++;
+	    bravo[bravo_index]=letter;
+	    
+      for(i=0;i<words[index].length;i++)
+   	  if(words[index].charAt(i)==letter || words[index].charAt(i)==letter.toLowerCase()) t=1;
+  	  
+      if(t)
+      {
+  	    alpha_index++;
+	      alpha[alpha_index]=letter;
+	    }
+	    else failnum++;
+	
+      document.f.lives.value=failnum;
+	    if (failnum==6) 
+      {
+        document.f.tried.value="You lose - Try again!";
+        document.f.word.value=words[index];
+        document.f.score.value--;
+        running=0;
+      }
+			else pick();
+	  }
+	  else advise("Letter "+letter+" is already used!");
+  }
+}
+
+function advise(msg)
+{
+  if (!advising)
+  {
+    advising=-1;
+    savetext=document.f.tried.value;  
+    document.f.tried.value=msg;
+    window.setTimeout("document.f.tried.value=savetext; advising=0;",1000);
+  }
+}
+
+var words = new Array("tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial","tricopter","quadcopter","hexacopter","octocopter","phantom","dji","robotics","autonomy","blade","skytech","multicopter","coaxial");
+
+</SCRIPT>
+
+<center>
+<br><br><br><br>
+<FORM NAME="f">
+
+<TABLE BGCOLOR=#C0C0C0 BORDER=1>
+
+
+<TR>
+  <TD><INPUT TYPE=BUTTON VALUE=" A "   onclick="seek('A');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" B "   onclick="seek('B');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" C "   onclick="seek('C');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" D "   onclick="seek('D');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" E "   onclick="seek('E');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" F "   onclick="seek('F');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" G "   onclick="seek('G');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" H "   onclick="seek('H');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" I   " onclick="seek('I');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" J  "  onclick="seek('J');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" K "   onclick="seek('K');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" L  "  onclick="seek('L');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" M "   onclick="seek('M');"></TD>
+     
+ </TR>
+ <INPUT TYPE=BUTTON onclick="new_word(this.form);" VALUE=" GO ">
+ <TR>
+ 
+ </TR>
+ <TR>
+  <TD><INPUT TYPE=BUTTON VALUE=" N "   onclick="seek('N');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" O "   onclick="seek('O');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" P "   onclick="seek('P');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" Q "   onclick="seek('Q');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" R "   onclick="seek('R');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" S "   onclick="seek('S');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" T "   onclick="seek('T');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" U "   onclick="seek('U');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" V "   onclick="seek('V');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" W "   onclick="seek('W');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" X "  onclick="seek('X');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" Y "   onclick="seek('Y');"></TD>
+  <TD><INPUT TYPE=BUTTON VALUE=" Z "  onclick="seek('Z');"></TD>
+ </TR>
+
+
+
+ <TR>
+  <TD COLSPAN=4 ALIGN=RIGHT>
+   Score : <INPUT TYPE=TEXT NAME="score" VALUE="0" onfocus="score.blur();" SIZE=2>
+   <BR>
+   Fails (6): <INPUT TYPE=TEXT NAME="lives" VALUE="0" onfocus="lives.blur();" SIZE=2>  
+  </TD>
+  <TD COLSPAN=9 ALIGN=CENTER>
+   <INPUT TYPE=TEXT NAME="word" VALUE="    --- Drone Hangman ---" onfocus="word.blur();" SIZE=30> 
+    <BR>
+   <INPUT TYPE=TEXT NAME="tried" VALUE="Click GO to get a word." onfocus="tried.blur();" SIZE=30>  
+  </TD>
+
+ </TR>
+ 
+</TABLE>
+
+</FORM>
+</center>
+
+
+
+
+	<h2> Click on the drones below to see them in action! </h2>
+    
+    <img src="https://i.pinimg.com/originals/9b/92/ed/9b92ed92b7eda6968584d333d693b8de.jpg" alt="drone" usemap="dronemap" class="centerpic"/>
+    
+    <map name="dronemap">
+        <area alt="Y" title="tricopter" href="https://www.youtube.com/watch?v=Nc_0msCxv1Q" shape="poly" coords="45,209,157,216,99,314" />
+        <area alt="V8" title="octocopter" href="https://youtu.be/4qtDzoGQk_U?t=1m7s" shape="poly" coords="131,312,77,366,74,449,129,508,225,509,275,460,274,367,222,314" />
+        <area alt="X8" title="X8" href="https://youtu.be/c2vu32f2FvE?t=8s" shape="poly" coords="369,460,469,460,471,360,369,359" />
+        <area alt="X" title="quadcopter" href="https://youtu.be/CXZ9d7bZcGg?t=10s" shape="poly" coords="225,201,329,199,331,307,225,305" />
+        <area alt="RC" title="helicopter" href="https://youtu.be/HsxYbnT8tKk?t=16s" shape="poly" coords="55,118,83,102,139,65,195,117,136,174" />
+        <area alt="CH" title="coaxial helicopter" href="https://youtu.be/-xHdQnoysP0?t=14s" shape="poly" coords="292,118,373,174,427,118,373,64" />
+        <area alt="C" title="coax" href="https://youtu.be/-xHdQnoysP0?t=14s" shape="poly" coords="679,118,662,82,627,66,587,81,572,118,588,156,627,172,663,156" />
+        <area alt="V6" title="hexicopter" href="https://youtu.be/ZTWHP80hei0" shape="poly" coords="556,252,509,334,411,337,361,251,409,168,507,166" />
+        <area alt="Y6" title="Y6" href="https://youtu.be/whQAOZnIzOA" shape="poly" coords="587,211,699,217,642,316" />
+    </map>
+	
+	
+	
+	
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	 
+	  
+  
+	
+	
+	
+	
+	<footer>
+		<section id="section-a">
+    <p>Drone Zone &#169 </p>
+  </section>
+
+	</footer>
+
+	
+	
+	
+
+<video autoplay loop id="video-background" muted plays-inline>
+	<source src="https://www.videvo.net/videvo_files/converted/2016_01/preview/Forest_15_3b_Videvo.mov47209.webm" type="video/mp4">
+</video>
+</html>
